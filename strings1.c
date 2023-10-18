@@ -1,75 +1,52 @@
 #include "shell.h"
 
 /**
- * cmp_chars - compare chars of strings
- * @str: input string.
- * @dlm: delimiter.
- *
- * Return: 1 if are equals, 0 if not.
+ * str_dup - duplicates a str in the heap memory.
+ * @st: Type char pointer str
+ * Return: duplicated str
  */
-int cmp_chars(char str[], const char *dlm)
+char *str_dup(const char *st)
 {
-	unsigned int k, l, j;
+	char *nw;
+	size_t length;
 
-	for (k = 0, j = 0; str[k]; k++)
-	{
-		for (l = 0; dlm[l]; l++)
-		{
-			if (str[k] == dlm[l])
-			{
-				j++;
-				break;
-			}
-		}
-	}
-	if (k == j)
-		return (1);
-	return (0);
+	length = str_len(st);
+	nw = malloc(sizeof(char) * (length + 1));
+	if (nw == NULL)
+		return (NULL);
+	mem_cp(nw, st, length + 1);
+	return (nw);
 }
 
 /**
- * is_digit - defines if string passed is a number
- *
- * @in_st: input string
- * Return: 1 if string is a number. 0 in other case.
+ * str_len - Returns the lenght of a string.
+ * @str: Type char pointer
+ * Return: Always 0.
  */
-int is_digit(const char *in_st)
+int str_len(const char *str)
 {
-	unsigned int k;
+	int l;
 
-	for (k = 0; in_st[k]; k++)
+	for (l = 0; str[l] != 0; l++)
 	{
-		if (in_st[k] < 48 || in_st[k] > 57)
-			return (0);
 	}
-	return (1);
+	return (l);
 }
 
 /**
- * reverse_str - reverses a string.
- * @in_st: input string.
- * Return: no return.
+ * str_chr - locates a character in a string,
+ * @st: string.
+ * @ch: character.
+ * Return: the pointer to the first occurrence of the character c.
  */
-void reverse_str(char *in_st)
+char *str_chr(char *st, char ch)
 {
-        int ct = 0, k, l;
-        char *s, tmp;
+	unsigned int k = 0;
 
-        while (ct >= 0)
-        {
-                if (in_st[ct] == '\0')
-                        break;
-                ct++;
-        }
-        s = in_st;
-
-        for (k = 0; k < (ct - 1); k++)
-        {
-                for (l = k + 1; l > 0; l--)
-                {
-                        tmp = *(s + l);
-                        *(s + l) = *(s + (l - 1));
-                        *(s + (l - 1)) = tmp;
-                }
-        }
+	for (; *(st + k) != '\0'; k++)
+		if (*(st + k) == ch)
+			return (st + k);
+	if (*(st + k) == ch)
+		return (st + k);
+	return ('\0');
 }

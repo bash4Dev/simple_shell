@@ -38,7 +38,6 @@ void set_data(dt_shell *datashell, char **arg_v)
 
 	for (i = 0; environ[i]; i++)
 		;
-
 	datashell->environ = malloc(sizeof(char *) * (i + 1));
 
 	for (i = 0; environ[i]; i++)
@@ -56,8 +55,8 @@ void set_data(dt_shell *datashell, char **arg_v)
  */
 void get_sigint(int s)
 {
-        (void)s;
-        write(STDOUT_FILENO, "\n~$ ", 5);
+	(void)s;
+	write(STDOUT_FILENO, "\n~$ ", 5);
 }
 
 /**
