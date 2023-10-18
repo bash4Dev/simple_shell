@@ -8,39 +8,37 @@
  */
 int cd_sh(dt_shell *datashell)
 {
-        char *dir;
-        int ishome, ishome2, isddash;
+	char *dir;
+	int ishome, ishome2, isddash;
 
-        dir = datashell->args[1];
+	dir = datashell->args[1];
 
-        if (dir != NULL)
-        {
-                ishome = str_cmp("$HOME", dir);
-                ishome2 = str_cmp("~", dir);
-                isddash = str_cmp("--", dir);
-        }
+	if (dir != NULL)
+	{
+		ishome = str_cmp("$HOME", dir);
+		ishome2 = str_cmp("~", dir);
+		isddash = str_cmp("--", dir);
+	}
 
-        if (dir == NULL || !ishome || !ishome2 || !isddash)
-        {
-                cd_home(datashell);
-                return (1);
-        }
+	if (dir == NULL || !ishome || !ishome2 || !isddash)
+	{
+		cd_home(datashell);
+		return (1);
+	}
 
-        if (str_cmp("-", dir) == 0)
-        {
-                cd_prev(datashell);
-                return (1);
-        }
+	if (str_cmp("-", dir) == 0)
+	{
+		cd_prev(datashell);
+		return (1);
+	}
 
-        if (str_cmp(".", dir) == 0 || str_cmp("..", dir) == 0)
-        {
-                cd_dot(datashell);
-                return (1);
-        }
-
-        cd_to(datashell);
-
-        return (1);
+	if (str_cmp(".", dir) == 0 || str_cmp("..", dir) == 0)
+	{
+		cd_dot(datashell);
+		return (1);
+	}
+	cd_to(datashell);
+	return (1);
 }
 
 /**
