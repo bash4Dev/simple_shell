@@ -3,7 +3,7 @@
 /**
  * add_rvar_node - adds a variable at the end
  * of a r_var list.
- * @head: head of the linked list.
+ * @hd: head of the linked list.
  * @lvar: length of the variable.
  * @val: value of the variable.
  * @lval: length of the value.
@@ -73,7 +73,7 @@ sep_lst *add_end_sep(sep_lst **hd, char s)
 /**
  * cmd_ln_end - adds a command line at the end
  * of a line_list.
- * @head: head of the linked list.
+ * @hd: head of the linked list.
  * @cmd_ln: command line.
  * Return: address of the head.
  */
