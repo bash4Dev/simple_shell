@@ -1,6 +1,7 @@
 #include "shell.h"
 
 /**
+ * str_tok - strings token
  * @str: input string.
  * @dlm: delimiter.
  *
@@ -103,9 +104,9 @@ int str_cmp(char *str_a, char *str_b)
 	int k;
 
 	k = 0;
-	while(str_a[k] == str_b[k] && str_a[k])
+	while (str_a[k] == str_b[k] && str_a[k])
 	{
-		if(str_a[k] > str_b[k])
+		if (str_a[k] > str_b[k])
 			return (1);
 		if (str_a[k] < str_b[k])
 			return (-1);
