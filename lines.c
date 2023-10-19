@@ -97,3 +97,25 @@ char *rd_line(int *gline)
 	*gline = getline(&in, &bfsize, stdin);
 	return (in);
 }
+
+/**
+ * free_sep_lst - frees a sep_list
+ * @hd: head of the linked list.
+ * Return: no return.
+ */
+void free_sep_lst(sep_lst **hd)
+{
+	sep_lst *tmp;
+	sep_lst *cr;
+
+	if (hd != NULL)
+	{
+		cr = *hd;
+		while ((tmp = cr) != NULL)
+		{
+			cr = cr->next;
+			free(tmp);
+		}
+		*hd = NULL;
+	}
+}

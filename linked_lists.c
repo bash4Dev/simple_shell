@@ -71,28 +71,6 @@ sep_lst *add_end_sep(sep_lst **hd, char s)
 }
 
 /**
- * free_sep_lst - frees a sep_list
- * @hd: head of the linked list.
- * Return: no return.
- */
-void free_sep_lst(sep_lst **hd)
-{
-	sep_lst *tmp;
-	sep_lst *cr;
-
-	if (hd != NULL)
-	{
-		cr = *hd;
-		while ((tmp = cr) != NULL)
-		{
-			cr = cr->next;
-			free(tmp);
-		}
-		*hd = NULL;
-	}
-}
-
-/**
  * cmd_ln_end - adds a command line at the end
  * of a line_list.
  * @head: head of the linked list.
@@ -149,22 +127,22 @@ void free_ln_lst(ln_lst **hd)
 
 /**
  * free_rvar_list - frees a r_var list
- * @head: head of the linked list.
+ * @hd: head of the linked list.
  * Return: no return.
  */
 void free_rvar_list(var_list **hd)
 {
-        var_list *tmp;
-        var_list *cr;
+	var_list *tmp;
+	var_list *cr;
 
-        if (hd != NULL)
-        {
-                cr = *hd;
-                while ((tmp = cr) != NULL)
-                {
-                        cr = cr->next;
-                        free(tmp);
-                }
-                *hd = NULL;
-        }
+	if (hd != NULL)
+	{
+		cr = *hd;
+		while ((tmp = cr) != NULL)
+		{
+			cr = cr->next;
+			free(tmp);
+		}
+		*hd = NULL;
+	}
 }
