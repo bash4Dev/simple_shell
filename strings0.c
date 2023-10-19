@@ -1,5 +1,6 @@
 #include "shell.h"
 
+/**
  * @str: input string.
  * @dlm: delimiter.
  *
@@ -7,45 +8,45 @@
  */
 char *str_tok(char str[], const char *dlm)
 {
-        static char *spl, *str_e;
-        char *str_s;
-        unsigned int k, bool;
+	static char *spl, *str_e;
+	char *str_s;
+	unsigned int k, bool;
 
-        if (str != NULL)
-        {
-                if (cmp_chars(str, dlm))
-                        return (NULL);
-                spl = str; /*Store first address*/
-                k = str_len(str);
-                str_e = &str[k]; /*Store last address*/
-        }
-        str_s = spl;
-        if (str_s == str_e) /*Reaching the end*/
-                return (NULL);
+	if (str != NULL)
+	{
+		if (cmp_chars(str, dlm))
+			return (NULL);
+		spl = str; /*Store first address*/
+		k = str_len(str);
+		str_e = &str[k]; /*Store last address*/
+	}
+	str_s = spl;
+	if (str_s == str_e) /*Reaching the end*/
+		return (NULL);
 
-        for (bool = 0; *spl; spl++)
-        {
-                /*Breaking loop finding the next token*/
-                if (spl != str_s)
-                        if (*spl && *(spl - 1) == '\0')
-                                break;
-                /*Replacing delimiter for null char*/
-                for (k = 0; dlm[k]; k++)
-                {
-                        if (*spl == dlm[k])
-                        {
-                                *spl = '\0';
-                                if (spl == str_s)
-                                        str_s++;
-                                break;
-                        }
-                }
-                if (bool == 0 && *spl) /*Str != Delim*/
-                        bool = 1;
-        }
-        if (bool == 0) /*Str == Delim*/
-                return (NULL);
-        return (str_s);
+	for (bool = 0; *spl; spl++)
+	{
+		/*Breaking loop finding the next token*/
+		if (spl != str_s)
+			if (*spl && *(spl - 1) == '\0')
+				break;
+		/*Replacing delimiter for null char*/
+		for (k = 0; dlm[k]; k++)
+		{
+			if (*spl == dlm[k])
+			{
+				*spl = '\0';
+				if (spl == str_s)
+					str_s++;
+				break;
+			}
+		}
+		if (bool == 0 && *spl) /*Str != Delim*/
+			bool = 1;
+	}
+	if (bool == 0) /*Str == Delim*/
+		return (NULL);
+	return (str_s);
 }
 
 /**
@@ -67,7 +68,6 @@ char *str_cat(char *dst, const char *s)
 		dst[a] = s[b];
 		a++;
 	}
-
 	dst[a] = '\0';
 	return (dst);
 }
@@ -101,26 +101,8 @@ char *str_cpy(char *dst, char *s)
 int str_cmp(char *str_a, char *str_b)
 {
 	int k;
-	
-	k = 0;
-	while (str_a[k] == str_b[k] && str_a[k] != '\0')
-	{
-	k++;
-	}
-	if (str_a[k] > str_b[k])
-	{
-		return 1;
-	}
-	else if (str_a[k] < str_b[k])
-	{
-		return -1;
-	}
-	else
-	{
-		return 0;
-	}
 
-/*	k = 0;
+	k = 0;
 	while(str_a[k] == str_b[k] && str_a[k])
 	{
 		if(str_a[k] > str_b[k])
@@ -129,7 +111,7 @@ int str_cmp(char *str_a, char *str_b)
 			return (-1);
 		k++;
 		return (0);
-	} */
+	}
 }
 
 /**
