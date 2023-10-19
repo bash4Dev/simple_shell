@@ -50,16 +50,13 @@ void help_gen(void)
 	char *help = "^-^ bash, version 1.0(1)-release\n";
 
 	write(STDOUT_FILENO, help, str_len(help));
-	help = "These commands are defined internally.Type
-		'help' to see the list";
+	help = "These commands are defined internally.Type 'help' to see the list";
 	write(STDOUT_FILENO, help, str_len(help));
-	help = "Type 'help name' to find out more about the function 'name'.
-		\n\n ";
+	help = "Type 'help name' to find out more about the function 'name'. \n\n ";
 	write(STDOUT_FILENO, help, str_len(help));
 	help = " alias: alias [name=['string']]\n cd: cd [-L|[-P [-e]] [-@]] ";
 	write(STDOUT_FILENO, help, str_len(help));
-	help = "[dir]\nexit: exit [n]\n  env:
-		env [option] [name=value] [command ";
+	help = "[dir]\nexit: exit [n]\n  env: env [option] [name=value] [command] ";
 	write(STDOUT_FILENO, help, str_len(help));
 	help = "[args]]\n  setenv: setenv [variable] [value]\n  unsetenv: ";
 	write(STDOUT_FILENO, help, str_len(help));
