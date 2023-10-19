@@ -43,7 +43,7 @@ void check_env(var_list **hd, char *input, dt_shell *data)
 }
 
 /**
- * check_vars - check if the typed variable is $$ or $?
+ * check_var - check if the typed variable is $$ or $?
  *
  * @hd: head of the linked list
  * @in_st: input string

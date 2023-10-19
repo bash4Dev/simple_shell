@@ -6,13 +6,13 @@
  */
 void _help(void)
 {
-        char *h = "help: help [-dms] [pattern ...]\n";
+	char *h = "help: help [-dms] [pattern ...]\n";
 
-        write(STDOUT_FILENO, h, str_len(h));
-        h = "\tDisplay information about builtin commands.\n ";
-        write(STDOUT_FILENO, h, str_len(h));
-        h = "Displays brief summaries of builtin commands.\n";
-        write(STDOUT_FILENO, h, str_len(h));
+	write(STDOUT_FILENO, h, str_len(h));
+	h = "\tDisplay information about builtin commands.\n ";
+	write(STDOUT_FILENO, h, str_len(h));
+	h = "Displays brief summaries of builtin commands.\n";
+	write(STDOUT_FILENO, h, str_len(h));
 }
 
 /**
@@ -21,11 +21,11 @@ void _help(void)
  */
 void help_alias(void)
 {
-        char *hp = "alias: alias [-p] [name[=value]...]\n";
+	char *hp = "alias: alias [-p] [name[=value]...]\n";
 
-        write(STDOUT_FILENO, hp, str_len(hp));
-        hp = "\tDefine or display aliases.\n ";
-        write(STDOUT_FILENO, hp, str_len(hp));
+	write(STDOUT_FILENO, hp, str_len(hp));
+	hp = "\tDefine or display aliases.\n ";
+	write(STDOUT_FILENO, hp, str_len(hp));
 }
 
 /**
@@ -34,11 +34,11 @@ void help_alias(void)
  */
 void help_cd(void)
 {
-        char *h = "cd: cd [-L|[-P [-e]] [-@]] [dir]\n";
+	char *h = "cd: cd [-L|[-P [-e]] [-@]] [dir]\n";
 
-        write(STDOUT_FILENO, h, str_len(h));
-        h = "\tChange the shell working directory.\n ";
-        write(STDOUT_FILENO, h, str_len(h));
+	write(STDOUT_FILENO, h, str_len(h));
+	h = "\tChange the shell working directory.\n ";
+	write(STDOUT_FILENO, h, str_len(h));
 }
 
 /**

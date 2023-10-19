@@ -158,7 +158,7 @@ int check_err_cmd(char *dest_dir, dt_shell *datashell)
 }
 
 /**
- * cmd_exec - executes command lines
+ * exec_cmd - executes command lines
  *
  * @datashell: data relevant (args and input)
  * Return: 1 on success.
