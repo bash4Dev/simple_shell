@@ -13,7 +13,7 @@ char *get_env(const char *name, char **environ)
 	char *ptr_env;
 	int i, move;
 
-        /* Initialize ptr_env value */
+	/* Initialize ptr_env value */
 	ptr_env = NULL;
 	move = 0;
 	/* Compare all environment variables */
@@ -83,7 +83,8 @@ void set_env(char *name, char *value, dt_shell *datashell)
 		free(var_env);
 	}
 
-	datashell->environ = reallocdp(datashell->environ, i, sizeof(char *) * (i + 2));
+	datashell->environ = reallocdp(datashell->environ, i,
+			sizeof(char *) * (i + 2));
 	datashell->environ[i] = cp_info(name, value);
 	datashell->environ[i + 1] = NULL;
 }
