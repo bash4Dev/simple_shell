@@ -91,10 +91,9 @@ ssize_t get_line(char **line_ptr, size_t *sl, FILE *stream)
  */
 char *rd_line(int *gline)
 {
-        char *in = NULL;
-        size_t bfsize = 0;
+	char *in = NULL;
+	size_t bfsize = 0;
 
-        *gline = getline(&in, &bfsize, stdin);
-
-        return (in);
+	*gline = getline(&in, &bfsize, stdin);
+	return (in);
 }

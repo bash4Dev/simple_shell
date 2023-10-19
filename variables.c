@@ -34,7 +34,8 @@ void check_env(var_list **hd, char *input, dt_shell *data)
 
 	for (j = 0; input[j]; j++)
 	{
-		if (input[j] == ' ' || input[j] == '\t' || input[j] == ';' || input[j] == '\n')
+		if (input[j] == ' ' || input[j] == '\t'
+				|| input[j] == ';' || input[j] == '\n')
 			break;
 	}
 

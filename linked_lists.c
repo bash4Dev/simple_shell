@@ -11,31 +11,30 @@
  */
 var_list *add_rvar_node(var_list **hd, int lvar, char *val, int lval)
 {
-        var_list *nw, *tmp;
+	var_list *nw, *tmp;
 
-        nw = malloc(sizeof(var_list));
-        if (nw == NULL)
-                return (NULL);
+	nw = malloc(sizeof(var_list));
+	if (nw == NULL)
+		return (NULL);
 
-        nw->var_lngth = lvar;
-        nw->var_vl = val;
-        nw->_val = lval;
+	nw->var_lngth = lvar;
+	nw->var_vl = val;
+	nw->_val = lval;
 
-        nw->next = NULL;
-        tmp = *hd;
+	nw->next = NULL;
+	tmp = *hd;
 
-        if (tmp == NULL)
-        {
-                *hd = nw;
-        }
-        else
-        {
-                while (tmp->next != NULL)
-                        tmp = tmp->next;
-                tmp->next = nw;
-        }
-
-        return (*hd);
+	if (tmp == NULL)
+	{
+		*hd = nw;
+	}
+	else
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = nw;
+	}
+	return (*hd);
 }
 
 /**
