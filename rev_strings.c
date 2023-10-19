@@ -62,7 +62,7 @@ void reverse_str(char *in_st)
 		ct++;
 	}
 	s = in_st;
-	
+
 	for (k = 0; k < (ct - 1); k++)
 	{
 		for (l = k + 1; l > 0; l--)
