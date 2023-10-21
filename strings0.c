@@ -103,16 +103,14 @@ int str_cmp(char *str_a, char *str_b)
 {
 	int k;
 
-	k = 0;
-	while (str_a[k] == str_b[k] && str_a[k])
-	{
-		if (str_a[k] > str_b[k])
-			return (1);
-		if (str_a[k] < str_b[k])
-			return (-1);
-		k++;
-		return (0);
-	}
+	for (k = 0; str_a[k] == str_b[k] && str_a[k]; k++)
+		;
+
+	if (str_a[k] > str_b[k])
+		return (1);
+	if (str_a[k] < str_b[k])
+		return (-1);
+	return (0);
 }
 
 /**
